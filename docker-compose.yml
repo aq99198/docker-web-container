@@ -25,14 +25,3 @@ services:
             dockerfile: Dockerfile54
         volumes_from:
             - php54
-    mariadb:
-        image: mariadb:10.1
-        ports:
-            - "3306:3306"
-        environment:
-            MYSQL_ROOT_PASSWORD: "secret"
-            MYSQL_USER: "app"
-            MYSQL_PASSWORD: "app"
-        volumes:
-            - ./data/mysql:/var/lib/mysql
-            - ./services/mariadb/config/my.cnf:/etc/mysql/my.cnf
