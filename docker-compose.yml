@@ -16,15 +16,15 @@ services:
             - ./data/nginx/logs/:/var/log/nginx/
     php71:
         build:
-        context: ./services/php
-        dockerfile: Dockerfile71
+            context: ./services/php
+            dockerfile: Dockerfile71
         volumes:
             - ./data/php/logs/php71.log:/var/log/php.log
             - ./app:/mnt/app
     php71console:
         build:
-        context: ./services/console
-        dockerfile: Dockerfile71
+            context: ./services/console
+            dockerfile: Dockerfile71
         volumes_from:
             - php71
     php54:
